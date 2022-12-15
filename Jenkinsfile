@@ -67,7 +67,7 @@ pipeline{
                 script{
                     sshagent(['k8s-user']){
                       dir('kubernetes/'){
-                        sh 'helm upgrade --install --set image.repository=34.125.133.110:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ '
+                        sh 'helm upgrade --install --set image.repository="34.125.133.110:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ '
 
                       }  
                         
