@@ -61,6 +61,15 @@ pipeline{
                     }
                 }
             }
+        }
+        stage("Deploying application on k8s cluster"){
+            steps{
+                script{
+                    sshagent(['k8s-user']){
+                        echo "Hi"
+                    }
+                }
+            }
         }        
     }
 post {
