@@ -62,19 +62,15 @@ pipeline{
                 }
             }
         }
-        stage("Deploying application on k8s cluster"){
-            steps{
-                script{
-                    sshagent(['k8s-user']){
-                      dir('kubernetes/'){
-                        sh 'helm upgrade --install --set image.repository="34.125.230.27:8083/springapp" --set image.tag="${VERSION}" myjavaapp myapp/ '
-
-                      }  
+        
                         
-                    }
-                }
-            }
-        }        
+
+                       
+                        
+                    
+                
+            
+             
     }
 post {
 		always {
